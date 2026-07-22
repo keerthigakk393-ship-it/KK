@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #display {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #333;
+      text-align: left;
+    }
+  </style>
+  <script>
+    function showValues() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      document.getElementById("display").innerHTML =
+        "<strong>Entered Values:</strong><br>" +
+        "Username: " + username + "<br>" +
+        "Password: " + password;
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="https://formspree.io/f/mykrpqlp" method="POST" oninput="showValues()">
+      <label for="username">Input 1</label>
+      <input type="text" id="username" name="username" placeholder="Enter Input 1" required>
+
+      <label for="password">Input 2</label>
+      <input type="password" id="password" name="password" placeholder="Enter Input 2" required>
+
+      <button type="submit">Login</button>
+    </form>
+    <div id="display"></div>
+  </div>
+</body>
+</html>
